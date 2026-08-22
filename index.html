@@ -282,6 +282,14 @@
 <script src="assets/js/app-starter.js"></script>
 <style>
   html { scroll-behavior: smooth; }
+  
+  /* Enable smooth touch scrolling over all images and cards */
+  image-slot, image-slot *, img, picture, article, .frame {
+    touch-action: pan-y !important;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+  }
+
   body { margin: 0; padding: 0; background: #0A0607; color: #F6EFE7; font-family: 'Manrope', system-ui, sans-serif; overflow-x: hidden; }
   * { box-sizing: border-box; }
   a { color: #E0B061; text-decoration: none; }

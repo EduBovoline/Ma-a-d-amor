@@ -730,7 +730,7 @@
         <sc-for list="{{ produtos }}" as="p" hint-placeholder-count="6">
           <article sc-camel-on-mouse-move="{{ p.onMove }}" sc-camel-on-mouse-leave="{{ p.onLeave }}" style="position:relative; border-radius:10px; overflow:hidden; background:#120C0E; border:1px solid rgba(246,239,231,.09); transform-style:preserve-3d; transition:transform .18s ease-out, border-color .4s ease, box-shadow .4s ease" style-hover="border-color:rgba(224,176,97,.5); box-shadow:0 30px 70px rgba(0,0,0,.6)">
             <div style="position:relative; aspect-ratio:4/5; overflow:hidden">
-              <image-slot id="{{ p.slot }}" shape="rect" fit="cover" placeholder="{{ p.nome }}"></image-slot>
+              <image-slot id="{{ p.slot }}" shape="rect" fit="cover" placeholder="{{ p.nome }}" src="{{ p.img }}"></image-slot>
             </div>
             <div style="position:relative; padding:22px 22px 24px">
               <p style="margin:0 0 9px; font-family:'Instrument Serif',serif; font-size:23px; line-height:1.2; color:#F6EFE7">{{ p.nome }}</p>
@@ -757,7 +757,7 @@
         <sc-for list="{{ carrinhos }}" as="c" hint-placeholder-count="4">
           <div style="position:relative; display:flex; flex-direction:column; border-radius:10px; overflow:hidden; background:#0A0607; border:1px solid rgba(246,239,231,.09); transition:border-color .4s ease, transform .4s ease" style-hover="border-color:rgba(224,176,97,.5); transform:translateY(-6px)">
             <div style="position:relative; aspect-ratio:1/1; overflow:hidden">
-              <image-slot id="{{ c.slot }}" shape="rect" fit="cover" placeholder="{{ c.nome }}"></image-slot>
+              <image-slot id="{{ c.slot }}" shape="rect" fit="cover" placeholder="{{ c.nome }}" src="{{ c.img }}"></image-slot>
             </div>
             <div style="padding:22px">
               <p style="margin:0 0 8px; font-family:'Instrument Serif',serif; font-size:22px; color:#F6EFE7">{{ c.nome }}</p>
@@ -1182,18 +1182,18 @@ class Component extends DCLogic {
     const cats = ["Tudo", "Maçãs do amor", "Doces", "Lembrancinhas"];
 
     const todos = [
-      { nome: "Maçã do amor tradicional", desc: "A clássica: calda fina e quebradiça, laço e embalagem individual.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-1" },
-      { nome: "Maçã do amor colorida", desc: "Na cor do tema da sua festa, do rosa pastel ao azul.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-2" },
-      { nome: "Maçã do amor dourada", desc: "Acabamento dourado para casamentos e festas de gala.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-3" },
-      { nome: "Maçã personalizada", desc: "Adesivo, laço e cores conforme o tema — inclusive logo de empresa.", cat: "Maçãs do amor", preco: "Sob consulta", slot: "prod-4" },
-      { nome: "Maçãs decoradas", desc: "Decoração aplicada à mão, combinando com a paleta da mesa.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-5" },
-      { nome: "Morango com chocolate", desc: "Morango selecionado com chocolate nobre e granulados.", cat: "Doces", preco: "A partir de 30 unidades", slot: "prod-6" },
-      { nome: "Espeto de morango", desc: "Espetinhos de frutas com chocolate: morango e uva.", cat: "Doces", preco: "A partir de 30 unidades", slot: "prod-7" },
-      { nome: "Pirulitos de chocolate", desc: "Simples, decorados ou personalizados com adesivo.", cat: "Doces", preco: "A partir de 30 unidades", slot: "prod-8" },
-      { nome: "Pipoca doce", desc: "Pipoca doce colorida para compor a mesa de doces.", cat: "Doces", preco: "Sob consulta", slot: "prod-9" },
-      { nome: "Mini algodão doce", desc: "Entra na decoração e sai como lembrança na mão do convidado.", cat: "Lembrancinhas", preco: "A partir de 30 unidades", slot: "prod-10" },
-      { nome: "Algodão doce no pote", desc: "A dica para lembrancinha de aniversário e eventos.", cat: "Lembrancinhas", preco: "A partir de 30 unidades", slot: "prod-11" },
-      { nome: "Mini cake e donuts", desc: "Doces personalizados para eventos corporativos e brindes.", cat: "Lembrancinhas", preco: "Sob consulta", slot: "prod-12" }
+      { nome: "Maçã do amor tradicional", desc: "A clássica: calda fina e quebradiça, laço e embalagem individual.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-1", img: "assets/images/produtos/maca-do-amor-tradicional.webp" },
+      { nome: "Maçã do amor colorida", desc: "Na cor do tema da sua festa, do rosa pastel ao azul.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-2", img: "assets/images/produtos/maca-do-amor-colorida.webp" },
+      { nome: "Maçã do amor dourada", desc: "Acabamento dourado para casamentos e festas de gala.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-3", img: "assets/images/produtos/maca-do-amor-dourada.webp" },
+      { nome: "Maçã personalizada", desc: "Adesivo, laço e cores conforme o tema — inclusive logo de empresa.", cat: "Maçãs do amor", preco: "Sob consulta", slot: "prod-4", img: "assets/images/produtos/maca-do-amor-personalizada.webp" },
+      { nome: "Maçãs decoradas", desc: "Decoração aplicada à mão, combinando com a paleta da mesa.", cat: "Maçãs do amor", preco: "A partir de 30 unidades", slot: "prod-5", img: "assets/images/produtos/macas-do-amor-decoradas.webp" },
+      { nome: "Morango com chocolate", desc: "Morango selecionado com chocolate nobre e granulados.", cat: "Doces", preco: "A partir de 30 unidades", slot: "prod-6", img: "assets/images/produtos/morango-com-chocolate.webp" },
+      { nome: "Espeto de morango", desc: "Espetinhos de frutas com chocolate: morango e uva.", cat: "Doces", preco: "A partir de 30 unidades", slot: "prod-7", img: "assets/images/produtos/espeto-de-morango-com-chocolate.webp" },
+      { nome: "Pirulitos de chocolate", desc: "Simples, decorados ou personalizados com adesivo.", cat: "Doces", preco: "A partir de 30 unidades", slot: "prod-8", img: "assets/images/produtos/pirulito-de-chocolate-decorado.webp" },
+      { nome: "Pipoca doce", desc: "Pipoca doce colorida para compor a mesa de doces.", cat: "Doces", preco: "Sob consulta", slot: "prod-9", img: "assets/images/produtos/pipoca-doce-gourmet.webp" },
+      { nome: "Mini algodão doce", desc: "Entra na decoração e sai como lembrança na mão do convidado.", cat: "Lembrancinhas", preco: "A partir de 30 unidades", slot: "prod-10", img: "assets/images/produtos/mini-algodao-doce-lembrancinha.webp" },
+      { nome: "Algodão doce no pote", desc: "A dica para lembrancinha de aniversário e eventos.", cat: "Lembrancinhas", preco: "A partir de 30 unidades", slot: "prod-11", img: "assets/images/produtos/algodao-doce-no-pote.webp" },
+      { nome: "Mini cake e donuts", desc: "Doces personalizados para eventos corporativos e brindes.", cat: "Lembrancinhas", preco: "Sob consulta", slot: "prod-12", img: "assets/images/produtos/mini-donuts-e-cakes.webp" }
     ];
 
     const filtro = this.state.filtro;
@@ -1212,10 +1212,10 @@ class Component extends DCLogic {
     }));
 
     const carrinhos = [
-      { nome: "Algodão doce", desc: "Máquina, atendente e algodão feito na hora.", slot: "car-1" },
-      { nome: "Fondue de chocolate", desc: "Cascata de chocolate com frutas e acompanhamentos.", slot: "car-2" },
-      { nome: "Soda italiana", desc: "Nosso lançamento: xaropes variados e drinks sem álcool.", slot: "car-3" },
-      { nome: "Pipoca", desc: "Carrinho retrô de pipoca doce e salgada.", slot: "car-4" }
+      { nome: "Algodão doce", desc: "Máquina, atendente e algodão feito na hora.", slot: "car-1", img: "assets/images/carrinhos/carrinho-algodao-doce-festa.webp" },
+      { nome: "Fondue de chocolate", desc: "Cascata de chocolate com frutas e acompanhamentos.", slot: "car-2", img: "assets/images/carrinhos/carrinho-fondue-chocolate-cascata.webp" },
+      { nome: "Soda italiana", desc: "Nosso lançamento: xaropes variados e drinks sem álcool.", slot: "car-3", img: "assets/images/carrinhos/carrinho-soda-italiana-eventos.webp" },
+      { nome: "Pipoca", desc: "Carrinho retrô de pipoca doce e salgada.", slot: "car-4", img: "assets/images/carrinhos/carrinho-pipoca-retro-festa.webp" }
     ];
 
     const googleUrl = "https://maps.app.goo.gl/sEFeF1Xymmeb4tHg9";

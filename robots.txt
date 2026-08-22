@@ -1,0 +1,12 @@
+# ===================================================================
+# Robots.txt — Maçã d'Amor Website
+# ===================================================================
+User-agent: *
+Allow: /
+Allow: /assets/images/
+Allow: /assets/videos/
+Allow: /assets/fonts/
+Disallow: /design-source/
+
+# Sitemap
+Sitemap: https://macadamor.com.br/sitemap.xml

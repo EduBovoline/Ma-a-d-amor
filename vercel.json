@@ -12,7 +12,11 @@
         },
         {
           "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
+          "value": "ALLOW-FROM https://vocacao.digital"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://vocacao.digital https://*.vocacao.digital"
         },
         {
           "key": "Referrer-Policy",

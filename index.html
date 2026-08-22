@@ -283,6 +283,64 @@
 <style>
   html { scroll-behavior: smooth; }
   
+  
+  /* Rotator de Métricas e Prova Social */
+  @keyframes metricRotate1 {
+    0%, 45% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+    50%, 95% {
+      opacity: 0;
+      transform: translateY(-14px);
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+
+  @keyframes metricRotate2 {
+    0%, 45% {
+      opacity: 0;
+      transform: translateY(14px);
+      visibility: hidden;
+    }
+    50%, 95% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(14px);
+      visibility: hidden;
+    }
+  }
+
+  .metric-rotator-box {
+    position: relative;
+    overflow: hidden;
+    min-height: 76px;
+  }
+
+  .metric-item-1 {
+    animation: metricRotate1 6s infinite cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+
+  .metric-item-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: metricRotate2 6s infinite cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+
   /* Enable smooth touch scrolling over all images and cards */
   image-slot, image-slot *, img, picture, article, .frame {
     touch-action: pan-y !important;
@@ -443,7 +501,16 @@
         <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:clamp(16px,2.4vw,32px); margin-top:44px; padding-top:32px; border-top:1px solid rgba(246,239,231,.12)">
           <div><p style="margin:0; font-family:'Instrument Serif',serif; font-size:44px; line-height:1; color:#E0B061">10</p><p style="margin:8px 0 0; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:rgba(246,239,231,.55)">Anos de festa</p></div>
           <div><p style="margin:0; font-family:'Instrument Serif',serif; font-size:44px; line-height:1; color:#E0B061">5.3k</p><p style="margin:8px 0 0; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:rgba(246,239,231,.55)">Seguidores</p></div>
-          <div><p style="margin:0; font-family:'Instrument Serif',serif; font-size:44px; line-height:1; color:#E0B061">30+</p><p style="margin:8px 0 0; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:rgba(246,239,231,.55)">Unidades no atacado</p></div>
+          <div class="metric-rotator-box">
+            <div class="metric-item-1">
+              <p style="margin:0; font-family:'Instrument Serif',serif; font-size:clamp(32px,3.6vw,44px); line-height:1; color:#E0B061; white-space:nowrap">150 mil+</p>
+              <p style="margin:8px 0 0; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:rgba(246,239,231,.55); line-height:1.3">Maçãs produzidas</p>
+            </div>
+            <div class="metric-item-2">
+              <p style="margin:0; font-family:'Instrument Serif',serif; font-size:clamp(32px,3.6vw,44px); line-height:1; color:#E0B061; white-space:nowrap">650+</p>
+              <p style="margin:8px 0 0; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:rgba(246,239,231,.55); line-height:1.3">Festas atendidas</p>
+            </div>
+          </div>
         </div>
       </div>
       <div data-reveal="1" style="position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:16px">
